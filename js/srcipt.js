@@ -4,7 +4,7 @@ const load = () => {
     const search = input.value;
     input.value = "";
     const error = document.getElementById('error');
-    if (search == "") {
+    if (search == "" || isNaN != search) {
         error.innerText = "Erorr"
     }
     else {
@@ -21,7 +21,7 @@ const show = (players) => {
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="card text-center">
-                <img src="${player.strThumb}" alt="">
+                <img class="w-70" src="${player.strThumb}" alt="">
                 <h5>Name:${player.strPlayer}</h5>
                 <h5>Country:${player.strNationality}</h5>
                 <div><button onclick="seeDetails(${player.idPlayer})" class="bg-primary border-2">See details</button></div>
@@ -36,8 +36,18 @@ const seeDetails = id => {
     const url = `https://www.thesportsdb.com/api/v1/json/2/lookupplayer.php?id=${id}`;
     fetch(url)
         .then(res => res.json())
-        .then(data => all(data))
+        .then(data => all(data.players[0]))
 }
 const all = info => {
     console.log(info);
+    const details = document.getElementById('details');
+    details.innerHTML = `
+    <div>
+     <img class="w-50" src="${info.strThumb}" alt="">
+    <h5>Name:${info.strDescriptionDE}</h5>
+    <h5>Country:${info.strNationality}</h5>
+    <h5>Title:${info.strTeam}</h5>
+    </div>
+    `;
+    details.appendChild()
 }
