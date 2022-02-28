@@ -1,17 +1,27 @@
 const load = () => {
+    document.getElementById('spinner').style.display = 'block';
     document.getElementById('showAll').innerHTML = "";
     const input = document.getElementById('search-feild');
     const search = input.value;
     input.value = "";
     const error = document.getElementById('error');
-    if (search == "" || isNaN != search) {
+    if (search == "") {
         error.innerText = "Erorr"
     }
     else {
         fetch(`https://www.thesportsdb.com/api/v1/json/2/searchplayers.php?p=${search}`)
             .then(response => response.json())
-            .then(data => show(data.player))
+            .then(data => {
+                if (data.player == null) {
+                    document.getElementById('spinner').style.display = 'block';
+                } else {
+                    show(data.player)
+                    document.getElementById('spinner').style.display = 'none';
+
+                }
+            })
         error.innerText = "";
+
     }
 }
 const show = (players) => {

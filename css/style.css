@@ -1,3 +1,6 @@
+#spinner{
+    display: none;
+}
 #error{
     background-color: red;
     color: white;
