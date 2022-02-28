@@ -1,0 +1,16 @@
+@media screen and (max-width:600px){
+    .head{
+        font-size: small;
+    }
+    .dis{
+        flex-wrap: wrap;
+    }
+    .but{
+        margin-top: 5px;
+        
+    }
+    .button{
+        padding-left: 30px;
+    }
+    
+}
