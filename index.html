@@ -19,15 +19,21 @@
 
                 <div class="container-fluid w-75">
                     <div class="d-flex dis">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <div class="button"><button class="btn btn-outline-success but" type="submit">Search</button>
+                        <input id="search-feild" class="form-control me-2" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <div class="button"><button onclick="load()" class="btn btn-outline-success but"
+                                type="submit">Search</button>
                         </div>
+
                     </div>
                 </div>
+                <h2 id="error"></h2>
+                <div id="showAll"></div>
             </div>
 
             <div class="col-lg-6 col-sm-12">
                 <h1>right side</h1>
+                <div id="details"></div>
             </div>
 
         </div>

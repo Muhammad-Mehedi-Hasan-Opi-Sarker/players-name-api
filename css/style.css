@@ -1,3 +1,9 @@
+#error{
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
 @media screen and (max-width:600px){
     .head{
         font-size: small;
@@ -14,3 +20,11 @@
     }
     
 }
+/* 
+<div class="card text-center">
+                <img src="${player.strRender}" alt="">
+                <h5>Name:${player.strPlayer}</h5>
+                <h5>Country:${player.strNationality}</h5>
+                <div><button class="bg-primary border-2">See details</button></div>
+                </div>
+                </div> */
